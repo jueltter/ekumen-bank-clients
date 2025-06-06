@@ -2,6 +2,7 @@ package ec.dev.samagua.ekumen_bank_clients.services.impl;
 
 import ec.dev.samagua.ekumen_bank_clients.models.Cliente;
 import ec.dev.samagua.ekumen_bank_clients.infrastructure.accounts.clients.CuentaServiceClient;
+import ec.dev.samagua.ekumen_bank_clients.models.validators.ClienteValidator;
 import ec.dev.samagua.ekumen_bank_clients.repositories.impl.ClienteRepository;
 import ec.dev.samagua.ekumen_bank_clients.services.ClienteService;
 import ec.dev.samagua.ekumen_bank_clients.utils.BeanCopyUtil;
@@ -27,6 +28,7 @@ public class ClienteServiceImpl implements ClienteService {
 
     private final ClienteRepository repository;
     private final CuentaServiceClient cuentaServiceClient;
+    private final ClienteValidator clienteValidator;
 
     @Override
     public Mono<Cliente> create(Cliente cliente) {
@@ -39,7 +41,7 @@ public class ClienteServiceImpl implements ClienteService {
                     Long countClienteIdAsLong = tuple.getT2();
                     Long countNombreAsLong = tuple.getT3();
 
-                    DataValidationResult clientValidationResult = cliente.validateForCreating(countIdentificacionAsLong, countClienteIdAsLong, countNombreAsLong);
+                    DataValidationResult clientValidationResult = clienteValidator.validateForCreating(cliente, countIdentificacionAsLong, countClienteIdAsLong, countNombreAsLong);
 
                     if (!clientValidationResult.isValid()) {
                         return Mono.error(InvalidDataException.getInstance(clientValidationResult.getErrors()));
@@ -75,7 +77,7 @@ public class ClienteServiceImpl implements ClienteService {
                     Long countNombre = tuple.getT4();
                     IdentityFieldWrapper nombreWrapper = new IdentityFieldWrapper(countNombre, Objects.equals(entity.getNombre(), newData.getNombre()));
 
-                    DataValidationResult clientValidationResult = newData.validateForUpdating(identificacionWrapper, clienteIdWrapper, nombreWrapper);
+                    DataValidationResult clientValidationResult = clienteValidator.validateForUpdating(newData, identificacionWrapper, clienteIdWrapper, nombreWrapper);
 
                     if (!clientValidationResult.isValid()) {
                         return Mono.error(InvalidDataException.getInstance(clientValidationResult.getErrors()));
@@ -113,7 +115,7 @@ public class ClienteServiceImpl implements ClienteService {
                     Long countNombre = tuple.getT4();
                     IdentityFieldWrapper nombreWrapper = new IdentityFieldWrapper(countNombre, Objects.equals(entity.getNombre(), newData.getNombre()));
 
-                    DataValidationResult clientValidationResult = newData.validateForPatching(identificacionWrapper, clienteIdWrapper, nombreWrapper);
+                    DataValidationResult clientValidationResult = clienteValidator.validateForPatching(newData, identificacionWrapper, clienteIdWrapper, nombreWrapper);
 
                     if (!clientValidationResult.isValid()) {
                         return Mono.error(InvalidDataException.getInstance(clientValidationResult.getErrors()));
