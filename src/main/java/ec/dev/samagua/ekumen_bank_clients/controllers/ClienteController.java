@@ -1,10 +1,10 @@
 package ec.dev.samagua.ekumen_bank_clients.controllers;
 
 import ec.dev.samagua.ekumen_bank_clients.dtos.ClienteDto;
-import ec.dev.samagua.ekumen_bank_clients.dtos_mappers.ClienteDtoMapper;
-import ec.dev.samagua.ekumen_bank_clients.entities.Cliente;
+import ec.dev.samagua.ekumen_bank_clients.dtos.mappers.ClienteDtoMapper;
+import ec.dev.samagua.ekumen_bank_clients.models.Cliente;
 import ec.dev.samagua.ekumen_bank_clients.services.ClienteService;
-import ec.dev.samagua.ekumen_bank_clients.utils_controllers_models.ControllerResult;
+import ec.dev.samagua.commons_lib.models.controllers.ControllerResult;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

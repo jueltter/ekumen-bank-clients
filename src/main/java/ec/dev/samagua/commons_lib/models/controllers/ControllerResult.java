@@ -1,8 +1,8 @@
-package ec.dev.samagua.ekumen_bank_clients.utils_controllers_models;
+package ec.dev.samagua.commons_lib.models.controllers;
 
-import ec.dev.samagua.ekumen_bank_clients.utils_exceptions.InvalidDataException;
-import ec.dev.samagua.ekumen_bank_clients.utils_exceptions.RepositoryException;
-import ec.dev.samagua.ekumen_bank_clients.utils_models.KeyValuePair;
+import ec.dev.samagua.commons_lib.exceptions.InvalidDataException;
+import ec.dev.samagua.commons_lib.exceptions.RepositoryException;
+import ec.dev.samagua.commons_lib.models.KeyValuePair;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

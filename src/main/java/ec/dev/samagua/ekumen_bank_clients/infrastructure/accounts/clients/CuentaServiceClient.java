@@ -1,8 +1,8 @@
 package ec.dev.samagua.ekumen_bank_clients.infrastructure.accounts.clients;
 
 import ec.dev.samagua.ekumen_bank_clients.infrastructure.accounts.models.Cuenta;
-import ec.dev.samagua.ekumen_bank_clients.utils_controllers_models.ControllerResult;
-import ec.dev.samagua.ekumen_bank_clients.utils_exceptions.RepositoryException;
+import ec.dev.samagua.commons_lib.models.controllers.ControllerResult;
+import ec.dev.samagua.commons_lib.exceptions.RepositoryException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.ParameterizedTypeReference;

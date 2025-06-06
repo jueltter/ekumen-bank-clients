@@ -1,7 +1,7 @@
-package ec.dev.samagua.ekumen_bank_clients.dtos_mappers;
+package ec.dev.samagua.ekumen_bank_clients.dtos.mappers;
 
 import ec.dev.samagua.ekumen_bank_clients.dtos.ClienteDto;
-import ec.dev.samagua.ekumen_bank_clients.entities.Cliente;
+import ec.dev.samagua.ekumen_bank_clients.models.Cliente;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

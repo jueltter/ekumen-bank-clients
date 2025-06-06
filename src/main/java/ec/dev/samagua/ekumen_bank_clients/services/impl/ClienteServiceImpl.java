@@ -1,13 +1,14 @@
-package ec.dev.samagua.ekumen_bank_clients.services;
+package ec.dev.samagua.ekumen_bank_clients.services.impl;
 
-import ec.dev.samagua.ekumen_bank_clients.entities.Cliente;
+import ec.dev.samagua.ekumen_bank_clients.models.Cliente;
 import ec.dev.samagua.ekumen_bank_clients.infrastructure.accounts.clients.CuentaServiceClient;
-import ec.dev.samagua.ekumen_bank_clients.repositories.ClienteRepository;
+import ec.dev.samagua.ekumen_bank_clients.repositories.impl.ClienteRepository;
+import ec.dev.samagua.ekumen_bank_clients.services.ClienteService;
 import ec.dev.samagua.ekumen_bank_clients.utils.BeanCopyUtil;
-import ec.dev.samagua.ekumen_bank_clients.utils.EncryptDecryptUtils;
-import ec.dev.samagua.ekumen_bank_clients.utils_exceptions.InvalidDataException;
-import ec.dev.samagua.ekumen_bank_clients.utils_models.DataValidationResult;
-import ec.dev.samagua.ekumen_bank_clients.utils_models.IdentityFieldWrapper;
+import ec.dev.samagua.commons_lib.utils.EncryptDecryptUtils;
+import ec.dev.samagua.commons_lib.exceptions.InvalidDataException;
+import ec.dev.samagua.commons_lib.models.DataValidationResult;
+import ec.dev.samagua.commons_lib.models.IdentityFieldWrapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;

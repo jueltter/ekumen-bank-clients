@@ -1,4 +1,4 @@
-package ec.dev.samagua.ekumen_bank_clients.utils_exceptions;
+package ec.dev.samagua.commons_lib.exceptions;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

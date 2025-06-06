@@ -1,7 +1,7 @@
-package ec.dev.samagua.ekumen_bank_clients.entities;
+package ec.dev.samagua.ekumen_bank_clients.models;
 
-import ec.dev.samagua.ekumen_bank_clients.utils_models.DataValidationResult;
-import ec.dev.samagua.ekumen_bank_clients.utils_models.IdentityFieldWrapper;
+import ec.dev.samagua.commons_lib.models.DataValidationResult;
+import ec.dev.samagua.commons_lib.models.IdentityFieldWrapper;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.springframework.data.relational.core.mapping.Column;

@@ -1,4 +1,4 @@
-package ec.dev.samagua.ekumen_bank_clients.utils;
+package ec.dev.samagua.commons_lib.utils;
 
 public final class EncryptDecryptUtils {
     private EncryptDecryptUtils() {

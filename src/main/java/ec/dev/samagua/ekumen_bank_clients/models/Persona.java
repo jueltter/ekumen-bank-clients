@@ -1,4 +1,4 @@
-package ec.dev.samagua.ekumen_bank_clients.entities;
+package ec.dev.samagua.ekumen_bank_clients.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

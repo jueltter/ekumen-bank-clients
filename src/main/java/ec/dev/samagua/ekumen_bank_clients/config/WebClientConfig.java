@@ -1,4 +1,4 @@
-package ec.dev.samagua.ekumen_bank_clients.utils_config;
+package ec.dev.samagua.ekumen_bank_clients.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

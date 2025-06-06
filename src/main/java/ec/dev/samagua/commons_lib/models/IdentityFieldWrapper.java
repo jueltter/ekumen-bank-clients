@@ -1,4 +1,4 @@
-package ec.dev.samagua.ekumen_bank_clients.utils_models;
+package ec.dev.samagua.commons_lib.models;
 
 public record IdentityFieldWrapper(Long count, Boolean noChange) {
 }

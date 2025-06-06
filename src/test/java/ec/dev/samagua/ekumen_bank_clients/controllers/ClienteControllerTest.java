@@ -1,7 +1,7 @@
 package ec.dev.samagua.ekumen_bank_clients.controllers;
 
 import ec.dev.samagua.ekumen_bank_clients.dtos.ClienteDto;
-import ec.dev.samagua.ekumen_bank_clients.utils_controllers_models.ControllerResult;
+import ec.dev.samagua.commons_lib.models.controllers.ControllerResult;
 import org.apache.http.client.utils.URIBuilder;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

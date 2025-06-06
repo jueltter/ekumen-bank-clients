@@ -1,7 +1,8 @@
-package ec.dev.samagua.ekumen_bank_clients.repositories;
+package ec.dev.samagua.ekumen_bank_clients.repositories.impl;
 
-import ec.dev.samagua.ekumen_bank_clients.entities.Cliente;
-import ec.dev.samagua.ekumen_bank_clients.utils_exceptions.RepositoryException;
+import ec.dev.samagua.ekumen_bank_clients.models.Cliente;
+import ec.dev.samagua.commons_lib.exceptions.RepositoryException;
+import ec.dev.samagua.ekumen_bank_clients.repositories.ClienteReactiveRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;

@@ -1,6 +1,6 @@
 package ec.dev.samagua.ekumen_bank_clients.services;
 
-import ec.dev.samagua.ekumen_bank_clients.entities.Cliente;
+import ec.dev.samagua.ekumen_bank_clients.models.Cliente;
 import reactor.core.publisher.Mono;
 
 import java.util.List;

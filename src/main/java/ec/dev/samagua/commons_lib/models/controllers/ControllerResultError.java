@@ -1,4 +1,4 @@
-package ec.dev.samagua.ekumen_bank_clients.utils_controllers_models;
+package ec.dev.samagua.commons_lib.models.controllers;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
