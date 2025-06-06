@@ -19,13 +19,14 @@ import java.util.UUID;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class ClienteControllerTest {
+class ClienteControllerIntegrationTest {
 
     @Autowired
     private WebTestClient webTestClient;
 
     @Test
     void search() throws URISyntaxException {
+        // Arrange
         String identificacion = UUID.randomUUID().toString(); // must be unique
         String clienteId = UUID.randomUUID().toString(); // must be unique
         String nombre = UUID.randomUUID().toString(); // must be unique
@@ -56,6 +57,7 @@ class ClienteControllerTest {
         assertThat(postResponseBody.getData()).isNotNull();
         assertThat(postResponseBody.getData().getId()).isNotNull();
 
+        // Act and Assert
         URIBuilder uriBuilder = new URIBuilder("/api/clientes")
                 .addParameter("nombre", nombre)
                 .addParameter("cliente-id", clienteId);
@@ -77,6 +79,7 @@ class ClienteControllerTest {
 
     @Test
     void create() {
+        // Arrange
         String identificacion = UUID.randomUUID().toString(); // must be unique
         String clienteId = UUID.randomUUID().toString(); // must be unique
         String nombre = UUID.randomUUID().toString(); // must be unique
@@ -93,6 +96,7 @@ class ClienteControllerTest {
                 .estado("TRUE")
                 .build();
 
+        // Act and Assert
         EntityExchangeResult<ControllerResult<ClienteDto>> postRequestResult = webTestClient.post().uri("/api/clientes")
                 .body(Mono.just(postRequestBody), ClienteDto.class)
                 .accept(MediaType.APPLICATION_JSON)
@@ -111,6 +115,7 @@ class ClienteControllerTest {
 
     @Test
     void update() {
+        // Arrange
         final String identificacion = UUID.randomUUID().toString(); // must be unique
         final String clienteId = UUID.randomUUID().toString(); // must be unique
         final String nombre = UUID.randomUUID().toString(); // must be unique
@@ -149,6 +154,7 @@ class ClienteControllerTest {
         entityDto.setDireccion(updatedDireccion); // update the address
         entityDto.setClave(clave); // it is not send from the client and it is mandatory
 
+        // Act and Assert
         EntityExchangeResult<ControllerResult<ClienteDto>> putRequestResult = webTestClient.put().uri("/api/clientes/" + entityDto.getId())
                 .body(Mono.just(entityDto), ClienteDto.class)
                 .accept(MediaType.APPLICATION_JSON)
@@ -167,6 +173,7 @@ class ClienteControllerTest {
 
     @Test
     void patch() {
+        // Arrange
         final String identificacion = UUID.randomUUID().toString(); // must be unique
         final String clienteId = UUID.randomUUID().toString(); // must be unique
         final String nombre = UUID.randomUUID().toString(); // must be unique
@@ -205,6 +212,7 @@ class ClienteControllerTest {
                 .estado(updatedEstado)
                 .build();
 
+        // Act and Assert
         EntityExchangeResult<ControllerResult<ClienteDto>> putRequestResult = webTestClient.patch().uri("/api/clientes/" + entityDto.getId())
                 .body(Mono.just(patchRequestBody), ClienteDto.class)
                 .accept(MediaType.APPLICATION_JSON)
@@ -222,6 +230,7 @@ class ClienteControllerTest {
 
     @Test
     void delete() {
+        // Arrange
         String identificacion = UUID.randomUUID().toString(); // must be unique
         String clienteId = UUID.randomUUID().toString(); // must be unique
         String nombre = UUID.randomUUID().toString(); // must be unique
@@ -254,6 +263,7 @@ class ClienteControllerTest {
 
         ClienteDto entityDto = postResponseBody.getData();
 
+        // Act and Assert
         EntityExchangeResult<ControllerResult<Void>> putRequestResult = webTestClient.delete().uri("/api/clientes/" + entityDto.getId())
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()
